@@ -1,0 +1,265 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Alegreya Sans SC', serif;
+    background-color: rgb(213, 238, 248);
+  }
+/********* nav and header *********/
+
+header{
+    background: rgb(148, 187, 245);
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+  }
+
+.nav_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding:10px
+}
+.nav_links a{
+    padding: 8px 10px;
+    margin: 4px;
+    color:rgb(6, 21, 49);
+    text-decoration: none;
+    font-size:1.3em;
+  }
+
+.nav_links a:visited{
+    color: rgb(6, 9, 49);
+}
+
+
+p.title{
+   font-size: 2.5em;
+   color: black;
+   font-family: 'Permanent Marker', cursive;
+}
+
+a.skip{
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+  }
+  
+a.skip:focus{
+    top:20px;
+    color: black;
+    text-decoration-style: solid;
+  }
+
+
+
+/*** main ***/
+.title{
+    padding: 20px;
+  }
+#intro h1{
+    font-size: 2.5em;
+  }
+#intro p{
+    font-size: 1.2em;
+    font-family:  monospace;
+  }
+#intro{
+    margin:50px 200px;
+    padding: 10px;
+    
+}
+
+.project{
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.container-grid {
+  display: grid;
+    grid-template-columns:  50% 50%;
+    grid-template-rows:  400px 400px;
+    grid-gap: 5px;
+    margin: 20px;
+    padding: 0 15%;
+  }
+a, .flip-card-back h2{
+    text-decoration: none;
+}
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px; /* 3D effect */
+  }
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    
+  }
+  .flip-card-back {
+    background-color: rgb(135, 163, 222);
+    text-align: center;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  .flip-card-back h2{
+      font-weight: 800;
+      color:rgb(43, 35, 116);
+      font-size: 1.5em;
+  }
+  
+  .flip-card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+ 
+
+.flip-card:hover .flip-card-inner , .flip-card:active .flip-card-inner, .flip-card:focus .flip-card-inner,.flip-card:focus-within .flip-card-inner
+{
+    transform: rotateY(180deg);
+  }
+
+.grid-img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    
+}
+
+
+  
+  .flip-card-back h2{
+    font-size: 2.5em;
+}
+.flip-card-back p{
+    text-decoration: none;
+    color:rgb(205, 208, 255);
+    font-weight: 600;
+    font-size: 1.5em;;
+}
+
+  .photo-1 { 
+    grid-column: 1/2;
+    grid-row: 1/2;
+    object-position: left top;
+}
+
+  .photo-2{ 
+    grid-column: 1/ 2;
+    grid-row: 2/3;
+}
+
+  .photo-3 { 
+    grid-column: 2/3;
+    grid-row: 1/2;
+    
+}
+
+  .photo-4 { 
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+
+
+
+/** footer **/
+  footer{
+    background-color:rgb(148, 206, 245);
+    color:black;
+    padding: 30px;
+  }
+  
+  .contact{
+    text-align: center;
+  }
+  .icon{
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+  }
+  .icon a{
+    width:2em;
+    height:2em;
+    margin: 10px;    
+  }
+
+  @media screen and (max-width: 1500px){
+
+
+    .container-grid{
+        grid-template-columns:  auto;
+        grid-template-rows:  500px 500px 500px 500px;
+        padding: 0 15%;
+      }
+      
+      .photo-1 { 
+        grid-column: 1/ 2;
+        grid-row: 1/2;
+    }
+    
+      .photo-2{ 
+        grid-column: 1/ 2;
+        grid-row: 2/ 3;
+    }
+    
+      .photo-3 { 
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+    
+      .photo-4 { 
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+
+
+
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+      }
+    .nav_links{
+        font-size: 0.8em;;
+    }
+    
+    #intro h1{
+        font-size: 2em;
+      }
+    #intro p{
+        font-size: 1em;
+        font-family:  monospace;
+      }
+    #intro{
+        margin:50px;
+        padding: 10px;
+        
+    }
+    .project{
+        font-size: 1.2em;
+        font-weight: 700;
+        text-align: center;
+    }
+}
